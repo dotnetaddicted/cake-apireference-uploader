@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Cake.ApiReference.Uploader</id>
+        <version>1.0.0.0</version>
+        <title>Cake.ApiReference.Uploader</title>
+        <authors>Eugene Nikitenko</authors>
+        <owners>Eugene Nikitenko</owners>
+        <projectUrl>https://github.com/dotnetaddicted/cake-apireference-uploader</projectUrl>           
+        <iconUrl>https://raw.githubusercontent.com/dotnetaddicted/cake-apireference-uploader/master/logo.png</iconUrl>
+        <copyright>Copyright © Eugene Nikitenko 2018. All Rights Reserved.</copyright>
+                
+        <description>CakeBuild extension for uploading Api references to specified URL.</description>        
+        <summary>CakeBuild extension for uploading Api references to specified URL.</summary>
+        <tags>CakeBuild Script</tags>
+        
+        <dependencies>
+            <dependency id="Newtonsoft.Json" version="11.0.2" />
+            <dependency id="Cake.Core" version="0.30.0" />  
+        </dependencies>
+
+    </metadata>
+</package>
