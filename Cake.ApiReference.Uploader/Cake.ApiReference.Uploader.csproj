@@ -29,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Cake.ApiReference.Uploader.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cake.Core, Version=0.30.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -49,11 +50,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiFileInfo.cs" />
+    <Compile Include="Example.cs" />
     <Compile Include="Options\BaseOptions.cs" />
+    <Compile Include="Options\DotNetHtmlOptions.cs" />
     <Compile Include="Requests\BaseRequest.cs" />
     <Compile Include="Options\RestApiCredentials.cs" />
     <Compile Include="Options\DotNetOptions.cs" />
     <Compile Include="Options\JavaOptions.cs" />
+    <Compile Include="Requests\DotNetHtmlRequest.cs" />
     <Compile Include="Requests\DotNetRequest.cs" />
     <Compile Include="ProductSections.cs" />
     <Compile Include="ApiRefUploaderAliases.cs" />

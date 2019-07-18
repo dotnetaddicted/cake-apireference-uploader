@@ -43,6 +43,30 @@ namespace Cake.ApiReference.Uploader
         }
 
         [CakeMethodAlias]
+        public static void UploadHtmlApiReferences(this ICakeContext context, RestApiCredentials credentials, DotNetHtmlOptions options)
+        {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
+
+            var request = new DotNetHtmlRequest(credentials, options);
+
+            context.Log.Write(Verbosity.Normal, LogLevel.Information, "Uploading API Refs for {0}-{1} at {2}",
+                request.ProductKey, request.SectionKey, credentials.Uri);
+
+            var multipartContent = new MultipartFormDataContent();
+            var json = JsonConvert.SerializeObject(request,
+                new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+            multipartContent.Add(new StringContent(json, Encoding.UTF8, "application/json"), request.ContentName);
+
+            var zipFileContent = new ByteArrayContent(request.ZipFile.FileData);
+            zipFileContent.Headers.ContentType = new MediaTypeHeaderValue(request.ZipFile.FileMimeType);
+            multipartContent.Add(zipFileContent, "zipFile", request.ZipFile.FileName);
+             
+            PostContent(context, credentials, multipartContent);
+        }
+        
+               
+        [CakeMethodAlias]
         public static void UploadApiReferences(this ICakeContext context, RestApiCredentials credentials, JavaOptions options)
         {
             if (context == null)
