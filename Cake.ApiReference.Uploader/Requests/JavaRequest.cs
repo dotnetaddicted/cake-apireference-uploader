@@ -25,7 +25,7 @@ namespace Cake.ApiReference.Uploader
             {
                 FileName = Path.GetFileName(options.JarFilePath),
                 FileData = File.ReadAllBytes(options.JarFilePath),
-                FileMimeType = MimeMapping.GetMimeMapping(options.JarFilePath)
+                FileMimeType = MimeMapping.MimeUtility.GetMimeMapping(options.JarFilePath)
             };
         }
 

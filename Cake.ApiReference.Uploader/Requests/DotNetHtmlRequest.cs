@@ -20,7 +20,7 @@ namespace Cake.ApiReference.Uploader
             {
                 FileName = Path.GetFileName(options.ZipFilePath),
                 FileData = File.ReadAllBytes(options.ZipFilePath),
-                FileMimeType = MimeMapping.GetMimeMapping(options.ZipFilePath)
+                FileMimeType = MimeMapping.MimeUtility.GetMimeMapping(options.ZipFilePath)
             };
 
         }

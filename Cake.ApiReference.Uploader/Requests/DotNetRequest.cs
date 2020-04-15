@@ -23,14 +23,14 @@ namespace Cake.ApiReference.Uploader
             {
                 FileName = Path.GetFileName(options.DllFilePath),
                 FileData = File.ReadAllBytes(options.DllFilePath),
-                FileMimeType = MimeMapping.GetMimeMapping(options.DllFilePath)
+                FileMimeType = MimeMapping.MimeUtility.GetMimeMapping(options.DllFilePath)
             };
 
             XmlFile = new ApiFileInfo
             {
                 FileName = Path.GetFileName(options.XmlFilePath),
                 FileData = File.ReadAllBytes(options.XmlFilePath),
-                FileMimeType = MimeMapping.GetMimeMapping(options.XmlFilePath)
+                FileMimeType = MimeMapping.MimeUtility.GetMimeMapping(options.XmlFilePath)
             };
         }
 
